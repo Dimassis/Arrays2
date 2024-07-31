@@ -38,23 +38,21 @@ public class Main {
         //Task 3
         System.out.println();
         float middleExpensesCompany = 0;
-        for (int i = 0; i <= expensesCompany.length; i++) {
+        for (int i = 0; i < expensesCompany.length; i++) {
             middleExpensesCompany += expensesCompany[i];
-            if(i == expensesCompany.length - 1) {
-                middleExpensesCompany = (float) (middleExpensesCompany / expensesCompany.length);
-                System.out.println("Средняя сумма трат за неделю составила " + middleExpensesCompany + " рублей.");
-                break;
-            }
         }
+        System.out.println("Средняя сумма трат за неделю составила " + middleExpensesCompany / expensesCompany.length + " рублей.");
 
         //Task 4
         System.out.println();
         char[] reserveFullName = {'n', 'a', 'v', 'I', ' ', 'v','o','n', 'a', 'v', 'I'};
-        char[] fullName = new char[reserveFullName.length];
-            for (int i = 0; i < reserveFullName.length; i++) {
-                fullName[reserveFullName.length - i - 1] =  reserveFullName[i];
+        // char[] fullName = new char[reserveFullName.length];
+            for (int i = 0; i < reserveFullName.length / 2; i++) {
+                char z = reserveFullName[i];
+                reserveFullName[i] = reserveFullName[reserveFullName.length - i - 1] ;
+                reserveFullName[reserveFullName.length - i - 1] = z;
         }
-        System.out.println(Arrays.toString(fullName));
+        System.out.println(Arrays.toString(reserveFullName));
 
     }
 }
